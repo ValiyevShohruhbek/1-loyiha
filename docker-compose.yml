@@ -6,13 +6,6 @@ services:
       context: .
     ports:
       - '3000:3000'
-    environment:
-      NODE_ENV: production
-      DATABASE_HOST: postgres
-      DATABASE_PORT: 5432
-      DATABASE_USER: postgres_user
-      DATABASE_PASSWORD: postgres_password
-      DATABASE_DB: my_database
     depends_on:
       - postgres
     command: sh -c 'yarn start:prod'
@@ -23,5 +16,7 @@ services:
       POSTGRES_USER: postgres_user
       POSTGRES_PASSWORD: postgres_password
       POSTGRES_DB: my_database
+    env_file:
+      - ./1/env
     ports:
       - '5433:5432'

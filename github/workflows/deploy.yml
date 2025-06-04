@@ -20,4 +20,4 @@ jobs:
         cd/home/ubuntu/app
         git pull origin main
         sudo docker compose down
-        udo docker compose up -d --build'
+        sudo docker compose up -d --build'
